@@ -18,8 +18,8 @@ const API = {
 
     return json;
   },
+  
   async createWorkout(newData) {
-
     console.log(newData)
     const res = await fetch("/api/workouts", {
       method: "POST",
