@@ -18,7 +18,7 @@ let workoutType = null;
 let shouldNavigateAway = false;
 
 init();
-
+console.log(resistanceDurationInput, durationInput)
 async function init() {
   if (location.search.split("=")[1] === undefined) {
     const workout = await API.getLastWorkout();
@@ -113,7 +113,7 @@ async function handleFormSubmit(event) {
     workoutData.duration = Number(resistanceDurationInput.value.trim());
   }
 
-  console.log(workoutData)
+  console.log(workoutData.duration)
   await API.createWorkout(workoutData);
   clearInputs();
   toast.classList.add("success");

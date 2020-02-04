@@ -18,10 +18,14 @@ function apiRoutes(app) {
         res.sendFile(path.join(__dirname, "../public/stats.html"))
     })
 
+    app.get("/api/workouts", function (req, res) {
+        db.Workout.find({})
+        .then (dbWorkout => {
+            res.json(dbWorkout);
+        })
+    })
+
     app.post("/api/workouts", function (req, res) {
-
-        console.log("This is a workout", req.body);
-
         db.Workout.create(req.body).then(function (data) {
             db.Workout.findOneAndUpdate({ _id: data._id }, { $push: { exercises: req.body } }, function (error, success) {
                 res.json(success)
@@ -36,14 +40,11 @@ function apiRoutes(app) {
         })
     })
 
-    app.get("/api/workouts", function (req, res) {
-        db.Workout.find({})
-        .then (dbWorkout => {
-            res.json(dbWorkout);
-        })
-    })
 
-    app.get
+
+    // app.put("api/workouts/:id", function (req, res) {
+    //     db.Workout.
+    // })
 }
 
 

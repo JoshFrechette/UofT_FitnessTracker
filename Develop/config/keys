@@ -1,0 +1,3 @@
+module.exports = {
+    mongoURI: 'mongodb+srv://Josh0422:GlobeHolder@jfdcluster-28xnz.gcp.mongodb.net/test?retryWrites=true&w=majority'
+}
