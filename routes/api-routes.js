@@ -40,13 +40,9 @@ function apiRoutes(app) {
         })
     })
 
-
-
     // app.put("api/workouts/:id", function (req, res) {
     //     db.Workout.
     // })
 }
-
-
 
 module.exports = apiRoutes;
